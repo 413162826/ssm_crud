@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<classPathEntry location="E:\mashen\Resourse\generator\mysql-connector-java-5.1.40.jar"/>
+  <context id="context1">
+  
+  <!-- 1.关闭自动生成注释(给生成文件的注释太多了,影响读程序) -->
+  <commentGenerator>
+  <property name="suppressAllComments" value="true"/>
+  </commentGenerator>
+  
+  <!-- 2.连接数据库 -->
+    <jdbcConnection 
+    connectionURL="jdbc:mysql://localhost:3306/ssm_crud" 
+    driverClass="com.mysql.jdbc.Driver" 
+    password="root" 
+    userId="root" />
+    
+    <!-- 3.指定javabean生成位置 -->
+    <javaModelGenerator targetPackage="com.suguowen.bean" targetProject="SSM_CRUD/src/main/java" />
+    
+    <!-- 4.指定sql.mapper映射文件生成位置 -->
+    <sqlMapGenerator targetPackage="com.suguowen.dao.mapper" targetProject="SSM_CRUD/src/main/resources" />
+    
+    <!-- 5.指定sql.interface接口生成位置 -->
+    <javaClientGenerator targetPackage="com.suguowen.dao" targetProject="SSM_CRUD/src/main/java" type="XMLMAPPER" />
+    
+    <!-- 6.table指定生成策略 -->
+    <table tableName="tbl_emp" domainObjectName="Employee">
+    </table>
+    <table  tableName="tbl_dept" domainObjectName="Department">
+    </table>
+  </context>
+</generatorConfiguration>
